@@ -1,48 +1,125 @@
-<mxfile host="app.diagrams.net" modified="2023-03-17T20:32:56.825Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="J89JYoEUP2OnKAD7Z2hc" version="21.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-18T21:55:19.569Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="mglY6SOPxp4_BtNsLYK_" version="21.0.7" type="github">
   <diagram name="Page-1" id="yOXbzh053lruvElYXrSi">
     <mxGraphModel dx="1647" dy="859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-5" value="blog-posts:4000" style="swimlane;" vertex="1" parent="1">
+        <mxCell id="e9mfs8pT30DRgP21pryx-2" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;gradientColor=default;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="620" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-5" value="blog-posts:4000" style="swimlane;" parent="1" vertex="1">
           <mxGeometry x="400" y="40" width="200" height="160" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-17" value="GET /posts" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="tkYp2Oz7mFS3xexXwNvz-5">
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-17" value="GET /posts" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="tkYp2Oz7mFS3xexXwNvz-5" vertex="1">
           <mxGeometry y="40" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-18" value="POST /posts" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="tkYp2Oz7mFS3xexXwNvz-5">
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-18" value="POST /posts" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="tkYp2Oz7mFS3xexXwNvz-5" vertex="1">
           <mxGeometry y="100" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-8" value="blog-comments:4001" style="swimlane;" vertex="1" parent="1">
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-8" value="blog-comments:4001" style="swimlane;" parent="1" vertex="1">
           <mxGeometry x="400" y="240" width="200" height="160" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-10" value="blog-query:4002" style="swimlane;" vertex="1" parent="1">
-          <mxGeometry x="400" y="440" width="200" height="160" as="geometry">
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-10" value="blog-query:4002" style="swimlane;" parent="1" vertex="1">
+          <mxGeometry x="1040" y="770" width="200" height="160" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-13" value="Event Bus" style="swimlane;" vertex="1" parent="1">
-          <mxGeometry x="840" y="40" width="200" height="560" as="geometry">
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-13" value="Event Bus" style="swimlane;" parent="1" vertex="1">
+          <mxGeometry x="1280" y="610" width="200" height="560" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-15" value="POST /events" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="tkYp2Oz7mFS3xexXwNvz-13">
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-15" value="POST /events" style="rounded=0;whiteSpace=wrap;html=1;" parent="tkYp2Oz7mFS3xexXwNvz-13" vertex="1">
           <mxGeometry y="40" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-16" value="POST /events" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="680" y="140" width="120" height="40" as="geometry" />
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-16" value="POST /events" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="650" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-19" value="blog-ui:3000" style="swimlane;startSize=23;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="200" height="160" as="geometry">
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-19" value="blog-ui:3000" style="swimlane;startSize=23;" parent="1" vertex="1">
+          <mxGeometry x="720" y="40" width="720" height="520" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-22" value="&lt;b style=&quot;font-size: 15px;&quot;&gt;blog-ui&lt;/b&gt;&lt;br style=&quot;font-size: 15px;&quot;&gt;npx create-react-app blog-ui&lt;br style=&quot;font-size: 15px;&quot;&gt;&lt;br style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;blog-posts&lt;/b&gt;&lt;br style=&quot;font-size: 15px;&quot;&gt;npm init -y&lt;br style=&quot;font-size: 15px;&quot;&gt;npm install express cors axios nodemon&lt;br style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;b&gt;blog-comments&lt;/b&gt;&lt;br&gt;npm init -y&lt;br&gt;npm install express cors axios nodemon" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="1">
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-22" value="&lt;b style=&quot;font-size: 15px;&quot;&gt;blog-ui&lt;/b&gt;&lt;br style=&quot;font-size: 15px;&quot;&gt;npx create-react-app blog-ui&lt;br style=&quot;font-size: 15px;&quot;&gt;&lt;br style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;blog-posts&lt;/b&gt;&lt;br style=&quot;font-size: 15px;&quot;&gt;npm init -y&lt;br style=&quot;font-size: 15px;&quot;&gt;npm install express cors axios nodemon&lt;br style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;b&gt;blog-comments&lt;/b&gt;&lt;br&gt;npm init -y&lt;br&gt;npm install express cors axios nodemon" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" parent="1" vertex="1">
           <mxGeometry x="40" y="235" width="290" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-3" value="GET /posts/:id/comments" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="400" y="280" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-4" value="POST /posts/:id/comments" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="400" y="340" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-6" value="App" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-7" value="blog-ui:3000" style="swimlane;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="200" height="160" as="geometry">
+            <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-8" value="Create New Post" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="760" y="80" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-9" value="Title" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="760" y="125" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-10" value="" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iTextInput;strokeColor=#444444;buttonText=;fontSize=8;whiteSpace=wrap;align=left;" vertex="1" parent="1">
+          <mxGeometry x="802" y="120" width="278" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-11" value="Submit" style="rounded=1;fillColor=#0057D8;align=center;strokeColor=none;html=1;whiteSpace=wrap;fontColor=#ffffff;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="802.5" y="167" width="80" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-14" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="760" y="210" width="640" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-27" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1080" y="240" width="300" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-28" value="" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=#6666FF;noLabel=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=3;" vertex="1" parent="e9mfs8pT30DRgP21pryx-27">
+          <mxGeometry width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-29" value="Post Title #2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=20;" vertex="1" parent="e9mfs8pT30DRgP21pryx-27">
+          <mxGeometry x="10" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-30" value="1 Comments" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="e9mfs8pT30DRgP21pryx-27">
+          <mxGeometry x="10" y="50" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-31" value="&lt;ul style=&quot;font-size: 14px;&quot;&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Comment #1&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=top;overflow=hidden;fontSize=14;" vertex="1" parent="e9mfs8pT30DRgP21pryx-27">
+          <mxGeometry x="20" y="70" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-32" value="Add New Comment" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="e9mfs8pT30DRgP21pryx-27">
+          <mxGeometry x="10" y="155" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-33" value="" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iTextInput;strokeColor=#444444;buttonText=;fontSize=8;whiteSpace=wrap;align=left;" vertex="1" parent="e9mfs8pT30DRgP21pryx-27">
+          <mxGeometry x="41" y="190" width="178" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-34" value="Submit" style="rounded=1;fillColor=#0057D8;align=center;strokeColor=none;html=1;whiteSpace=wrap;fontColor=#ffffff;fontSize=12;sketch=0;" vertex="1" parent="e9mfs8pT30DRgP21pryx-27">
+          <mxGeometry x="41" y="240" width="80" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-15" value="" style="whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=#6666FF;noLabel=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=3;" vertex="1" parent="1">
+          <mxGeometry x="760" y="240" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-16" value="Post Title #1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="770" y="240" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-17" value="3 Comments" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="770" y="287" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-22" value="&lt;ul style=&quot;font-size: 14px;&quot;&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Comment #1&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Comment #2&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Comment #3&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=top;overflow=hidden;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="780" y="319" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-23" value="Add New Comment" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="770" y="395" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-24" value="" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iTextInput;strokeColor=#444444;buttonText=;fontSize=8;whiteSpace=wrap;align=left;" vertex="1" parent="1">
+          <mxGeometry x="801" y="430" width="178" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-25" value="Submit" style="rounded=1;fillColor=#0057D8;align=center;strokeColor=none;html=1;whiteSpace=wrap;fontColor=#ffffff;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="801" y="480" width="80" height="33" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
