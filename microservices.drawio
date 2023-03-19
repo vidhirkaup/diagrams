@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2023-03-19T13:34:39.609Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="FuIyhbGDzCif5QN0xvo1" version="21.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-19T15:17:41.445Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="EX2AxanpG0YW5naUPwnM" version="21.0.7" type="github">
   <diagram name="Page-1" id="yOXbzh053lruvElYXrSi">
-    <mxGraphModel dx="1647" dy="859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1887" dy="859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="e9mfs8pT30DRgP21pryx-2" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;gradientColor=default;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="20" y="10" width="620" height="530" as="geometry" />
+          <mxGeometry x="20" y="10" width="620" height="590" as="geometry" />
         </mxCell>
         <mxCell id="tkYp2Oz7mFS3xexXwNvz-5" value="blog-posts:4000" style="swimlane;" parent="1" vertex="1">
           <mxGeometry x="400" y="40" width="200" height="160" as="geometry">
@@ -24,20 +24,17 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="tkYp2Oz7mFS3xexXwNvz-10" value="blog-query:4002" style="swimlane;" parent="1" vertex="1">
-          <mxGeometry x="1040" y="770" width="200" height="160" as="geometry">
+          <mxGeometry x="400" y="1080" width="200" height="160" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tkYp2Oz7mFS3xexXwNvz-13" value="Event Bus" style="swimlane;" parent="1" vertex="1">
-          <mxGeometry x="1280" y="610" width="200" height="560" as="geometry">
+          <mxGeometry x="720" y="680" width="200" height="560" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tkYp2Oz7mFS3xexXwNvz-15" value="POST /events" style="rounded=0;whiteSpace=wrap;html=1;" parent="tkYp2Oz7mFS3xexXwNvz-13" vertex="1">
           <mxGeometry y="40" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-16" value="POST /events" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="970" y="650" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="tkYp2Oz7mFS3xexXwNvz-19" value="blog-ui:3000" style="swimlane;startSize=23;" parent="1" vertex="1">
           <mxGeometry x="720" y="40" width="720" height="520" as="geometry">
@@ -147,6 +144,33 @@
         </mxCell>
         <mxCell id="e9mfs8pT30DRgP21pryx-47" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;gradientColor=default;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="680" y="10" width="1360" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-48" value="blog-posts:4000" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="400" y="680" width="200" height="160" as="geometry">
+            <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-49" value="GET /posts" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="e9mfs8pT30DRgP21pryx-48">
+          <mxGeometry y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-50" value="POST /posts" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="e9mfs8pT30DRgP21pryx-48">
+          <mxGeometry y="100" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-51" value="blog-comments:4001" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="400" y="880" width="200" height="160" as="geometry">
+            <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-52" value="GET /posts/:id/comments" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="400" y="920" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-53" value="POST /posts/:id/comments" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="400" y="980" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-54" value="blog-ui:3000" style="swimlane;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="200" height="160" as="geometry">
+            <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
