@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-19T18:51:38.008Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="Y1ctx1RPpI-LODBddgmO" version="21.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-19T18:59:07.612Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="5Qf0Egx4qNWDmplDJFc_" version="21.0.7" type="github">
   <diagram name="Page-1" id="yOXbzh053lruvElYXrSi">
     <mxGraphModel dx="1647" dy="859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
@@ -24,17 +24,29 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="tkYp2Oz7mFS3xexXwNvz-10" value="blog-query:4002" style="swimlane;" parent="1" vertex="1">
-          <mxGeometry x="400" y="1080" width="200" height="160" as="geometry">
+          <mxGeometry x="400" y="1080" width="320" height="160" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tkYp2Oz7mFS3xexXwNvz-13" value="Event Bus" style="swimlane;" parent="1" vertex="1">
-          <mxGeometry x="720" y="680" width="200" height="560" as="geometry">
+        <mxCell id="e9mfs8pT30DRgP21pryx-62" value="POST /events" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="tkYp2Oz7mFS3xexXwNvz-10">
+          <mxGeometry x="200" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tkYp2Oz7mFS3xexXwNvz-13" value="blog-events:4005" style="swimlane;" parent="1" vertex="1">
+          <mxGeometry x="920" y="680" width="200" height="560" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tkYp2Oz7mFS3xexXwNvz-15" value="POST /events" style="rounded=0;whiteSpace=wrap;html=1;" parent="tkYp2Oz7mFS3xexXwNvz-13" vertex="1">
           <mxGeometry y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-64" value="POST localhost:4000/events" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="tkYp2Oz7mFS3xexXwNvz-13">
+          <mxGeometry x="10" y="120" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-65" value="POST localhost:4001/events" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="tkYp2Oz7mFS3xexXwNvz-13">
+          <mxGeometry x="10" y="170" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-66" value="POST localhost:4002/events" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="tkYp2Oz7mFS3xexXwNvz-13">
+          <mxGeometry x="10" y="220" width="180" height="40" as="geometry" />
         </mxCell>
         <mxCell id="tkYp2Oz7mFS3xexXwNvz-19" value="blog-ui:3000" style="swimlane;startSize=23;" parent="1" vertex="1">
           <mxGeometry x="720" y="40" width="720" height="520" as="geometry">
@@ -156,8 +168,16 @@
         <mxCell id="e9mfs8pT30DRgP21pryx-47" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;gradientColor=default;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="680" y="10" width="1360" height="590" as="geometry" />
         </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1.014;exitY=0.12;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="e9mfs8pT30DRgP21pryx-48" target="tkYp2Oz7mFS3xexXwNvz-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="699" />
+              <mxPoint x="880" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="e9mfs8pT30DRgP21pryx-48" value="blog-posts:4000" style="swimlane;" vertex="1" parent="1">
-          <mxGeometry x="400" y="680" width="200" height="160" as="geometry">
+          <mxGeometry x="400" y="680" width="320" height="160" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -167,10 +187,16 @@
         <mxCell id="e9mfs8pT30DRgP21pryx-50" value="POST /posts" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="e9mfs8pT30DRgP21pryx-48">
           <mxGeometry y="100" width="120" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-60" value="POST /events" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="e9mfs8pT30DRgP21pryx-48">
+          <mxGeometry x="200" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
         <mxCell id="e9mfs8pT30DRgP21pryx-51" value="blog-comments:4001" style="swimlane;" vertex="1" parent="1">
-          <mxGeometry x="400" y="880" width="200" height="160" as="geometry">
+          <mxGeometry x="400" y="880" width="320" height="160" as="geometry">
             <mxRectangle x="510" y="230" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-61" value="POST /events" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="e9mfs8pT30DRgP21pryx-51">
+          <mxGeometry x="200" y="40" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="e9mfs8pT30DRgP21pryx-52" value="GET /posts/:id/comments" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
           <mxGeometry x="400" y="920" width="160" height="40" as="geometry" />
@@ -185,6 +211,35 @@
         </mxCell>
         <mxCell id="tkYp2Oz7mFS3xexXwNvz-22" value="&lt;b style=&quot;font-size: 15px;&quot;&gt;blog-ui&lt;/b&gt;&lt;br style=&quot;font-size: 15px;&quot;&gt;npx create-react-app blog-ui&lt;br style=&quot;font-size: 15px;&quot;&gt;&lt;br style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;blog-posts&lt;/b&gt;&lt;br style=&quot;font-size: 15px;&quot;&gt;npm init -y&lt;br style=&quot;font-size: 15px;&quot;&gt;npm install express cors axios nodemon&lt;br style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;b&gt;blog-comments&lt;/b&gt;&lt;br&gt;npm init -y&lt;br&gt;npm install express cors axios nodemon&lt;br&gt;&lt;br&gt;https://getbootstrap.com/docs/5.3/getting-started/download/" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" parent="1" vertex="1">
           <mxGeometry x="50" y="240" width="420" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="e9mfs8pT30DRgP21pryx-64" target="e9mfs8pT30DRgP21pryx-60">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="820" />
+              <mxPoint x="840" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="e9mfs8pT30DRgP21pryx-65" target="e9mfs8pT30DRgP21pryx-61">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="870" />
+              <mxPoint x="840" y="940" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="e9mfs8pT30DRgP21pryx-66" target="e9mfs8pT30DRgP21pryx-62">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="920" />
+              <mxPoint x="880" y="1000" />
+              <mxPoint x="840" y="1000" />
+              <mxPoint x="840" y="1130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9mfs8pT30DRgP21pryx-70" value="Event" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="660" width="90" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
