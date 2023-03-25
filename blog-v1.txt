@@ -1,0 +1,48 @@
+title Blog Application
+
+participant ui [3000]
+participant posts [4000]
+participant comments [4001]
+participant query [4002]
+participant events-bus [3000]
+
+group Posts
+ui [3000]-->posts [4000]:POST /posts
+
+activate posts [4000]
+posts [4000]-->events-bus [3000]:POST /events {event}
+ui [3000]<-posts [4000]:Response
+deactivate posts [4000]
+
+activate events-bus [3000]
+posts [4000]<--events-bus [3000]:POST /events
+comments [4001]<--events-bus [3000]:POST /events
+query [4002]<-events-bus [3000]:POST /events
+deactivate events-bus [3000]
+
+end 
+
+group Comments
+ui [3000]-->comments [4001]:POST /posts/:id/comments
+
+activate comments [4001]
+comments [4001]-->events-bus [3000]:event
+ui [3000]<--comments [4001]:Response
+deactivate comments [4001]
+
+activate events-bus [3000]
+posts [4000]<--events-bus [3000]:POST /events
+comments [4001]<--events-bus [3000]:POST /events
+query [4002]<--events-bus [3000]:POST /events
+deactivate events-bus [3000]
+
+end 
+
+
+group Query
+ui [3000]-->query [4002]:GET /posts
+activate query [4002]
+ui [3000]<--query [4002]:{\n    "b105fd34": {\n        "id": "b105fd34",\n        "title": "Post 1",\n        "comments": [\n            {\n                "id": "dc87f8c3",\n                "comment": "post-1 comment-1"\n            },\n            {\n                "id": "2ea14300",\n                "comment": "post-1 comment-2"\n            }\n        ]\n    },\n    "2541959c": {\n        "id": "2541959c",\n        "title": "Post 2",\n        "comments": [\n            {\n                "id": "71819bf5",\n                "comment": "comment-1"\n            },\n            {\n                "id": "023f6626",\n                "comment": "comment-2"\n            },\n            {\n                "id": "b7c925ab",\n                "comment": "comment-3"\n            }\n        ]\n    }\n}
+deactivate query [4002]
+
+end 
