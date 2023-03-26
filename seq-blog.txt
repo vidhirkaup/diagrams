@@ -27,37 +27,56 @@ group Comments
 ui [3000]-->comments [4001]:POST /posts/:id/comments
 
 activate comments [4001]
-comments [4001]-->events-bus [3000]:POST /events [event > comment-created]
+comments [4001]->events-bus [3000]:POST /events [comment-created]
+activate events-bus [3000]
 ui [3000]<--comments [4001]:Response
 deactivate comments [4001]
 
-activate events-bus [3000]
-posts [4000]<--events-bus [3000]:POST /events
+group comment-created
+posts [4000]<--events-bus [3000]:POST /events [comment-created]
 
-comments [4001]<--events-bus [3000]:POST /events
+comments [4001]<--events-bus [3000]:POST /events [comment-created]
 
+query [4002]<--events-bus [3000]:POST /events [comment-created]
 activate query [4002]
-query [4002]<--events-bus [3000]:POST /events
 note over query [4002]: Comment Status = Pending Review
 deactivate query [4002]
 
+moderation [4003]<--events-bus [3000]:POST /events [comment-created]
+
 activate moderation [4003]
-moderation [4003]<--events-bus [3000]:POST /events
-note over moderation [4003]:Moderate Comment
-moderation [4003]-->events-bus [3000]:POST /events [event > comment-moderated]
-deactivate moderation [4003]
-
-activate comments [4001]
-comments [4001]<--events-bus [3000]:POST /events [event: comment-moderated]
-note over comments [4001]:Comment Status = (approved |rejected)
-deactivate comments [4001]
-
+end
 deactivate events-bus [3000]
 
 
+note over moderation [4003]:Moderate Comment
+moderation [4003]->events-bus [3000]:POST /events [comment-moderated]
+activate events-bus [3000]
+deactivate moderation [4003]
+
+group comment-moderated
+posts [4000]<--events-bus [3000]:POST /events [comment-moderated]
+query [4002]<--events-bus [3000]:POST /events [comment-moderated]
+moderation [4003]<--events-bus [3000]:POST /events [comment-moderated]
+comments [4001]<--events-bus [3000]:POST /events [comment-moderated]
+activate comments [4001]
+note over comments [4001]:Comment Status = (approved | rejected)
+comments [4001]->events-bus [3000]:POST /events [comment-updated]
+deactivate comments [4001]
+
+end
+group comment-updated
+posts [4000]<--events-bus [3000]:POST /events [comment-updated]
+comments [4001]<--events-bus [3000]:POST /events [comment-updated]
+query [4002]<--events-bus [3000]:POST /events [comment-updated]
+activate query [4002]
+note over query [4002]: Comment Status = Pending Review
+deactivate query [4002]
+moderation [4003]<--events-bus [3000]:POST /events [comment-updated]
+end
+deactivate events-bus [3000]
 
 end 
-
 
 group Query
 ui [3000]-->query [4002]:GET /posts
