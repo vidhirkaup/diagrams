@@ -4,13 +4,14 @@ participant ui [3000]
 participant posts [4000]
 participant comments [4001]
 participant query [4002]
+participant moderation [4003]
 participant events-bus [3000]
 
 group Posts
 ui [3000]-->posts [4000]:POST /posts
 
 activate posts [4000]
-posts [4000]-->events-bus [3000]:POST /events {event}
+posts [4000]-->events-bus [3000]:POST /events [event > post-created]
 ui [3000]<-posts [4000]:Response
 deactivate posts [4000]
 
@@ -26,15 +27,34 @@ group Comments
 ui [3000]-->comments [4001]:POST /posts/:id/comments
 
 activate comments [4001]
-comments [4001]-->events-bus [3000]:event
+comments [4001]-->events-bus [3000]:POST /events [event > comment-created]
 ui [3000]<--comments [4001]:Response
 deactivate comments [4001]
 
 activate events-bus [3000]
 posts [4000]<--events-bus [3000]:POST /events
+
 comments [4001]<--events-bus [3000]:POST /events
+
+activate query [4002]
 query [4002]<--events-bus [3000]:POST /events
+note over query [4002]: Comment Status = Pending Review
+deactivate query [4002]
+
+activate moderation [4003]
+moderation [4003]<--events-bus [3000]:POST /events
+note over moderation [4003]:Moderate Comment
+moderation [4003]-->events-bus [3000]:POST /events [event > comment-moderated]
+deactivate moderation [4003]
+
+activate comments [4001]
+comments [4001]<--events-bus [3000]:POST /events [event: comment-moderated]
+note over comments [4001]:Comment Status = (approved |rejected)
+deactivate comments [4001]
+
 deactivate events-bus [3000]
+
+
 
 end 
 
@@ -42,7 +62,7 @@ end
 group Query
 ui [3000]-->query [4002]:GET /posts
 activate query [4002]
-ui [3000]<--query [4002]:{\n    "b105fd34": {\n        "id": "b105fd34",\n        "title": "Post 1",\n        "comments": [\n            {\n                "id": "dc87f8c3",\n                "comment": "post-1 comment-1"\n            },\n            {\n                "id": "2ea14300",\n                "comment": "post-1 comment-2"\n            }\n        ]\n    },\n    "2541959c": {\n        "id": "2541959c",\n        "title": "Post 2",\n        "comments": [\n            {\n                "id": "71819bf5",\n                "comment": "comment-1"\n            },\n            {\n                "id": "023f6626",\n                "comment": "comment-2"\n            },\n            {\n                "id": "b7c925ab",\n                "comment": "comment-3"\n            }\n        ]\n    }\n}
+ui [3000]<--query [4002]:{\n    "b105fd34": {\n        "id": "b105fd34",\n        "title": "Post 1",\n        "comments": [\n            {\n                "id": "dc87f8c3",\n                "comment": "post-1 comment-1"\n                "staus": "pending review"\n            },\n            {\n                "id": "2ea14300",\n                "comment": "post-1 comment-2"\n                "status": "approved"\n            },\n            {\n                "id": "2ea14300",\n                "comment": "post-1 comment-2 banana"\n                "status": "rejected"\n            }\n        ]\n    },\n    "2541959c": {\n        "id": "2541959c",\n        "title": "Post 2",\n        "comments": [\n            {\n                "id": "71819bf5",\n                "comment": "comment-1"\n            },\n            {\n                "id": "023f6626",\n                "comment": "comment-2"\n            },\n            {\n                "id": "b7c925ab",\n                "comment": "comment-3"\n            }\n        ]\n    }\n}
 deactivate query [4002]
 
 end 
